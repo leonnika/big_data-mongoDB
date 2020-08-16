@@ -24,8 +24,8 @@ db.product.insertMany([
 ```
 db.product.aggregate(
    [
-     { $project: {  category: 1, total: { $multiply: [ "$price", "$amount" ] } } },
-     {$group:{ _id:'$category', cost:{$sum:'$total'}}}
+     { $project: {  category: 1, total:{$multiply:[ "$price", "$amount"]}}},
+     { $group:{ _id:'$category', cost:{$sum:'$total'}}}
    ]
 )
 ```
